@@ -1,0 +1,581 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fswiss\fcharset0 Helvetica-Bold;
+\f3\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c0;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh18000\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+Create database 
+\f1\fs22 \cf2 \CocoaLigature0 exercise_questions;\
+\
+Use exercise_questions;\
+\
+Select database();\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
++--------------------+\
+| database()         |\
++--------------------+\
+| exercise_questions |\
++--------------------+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \CocoaLigature1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 \
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f2\b\fs48 \cf0 Exercise 1:
+\f0\b0\fs24 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+
+\f2\b\fs36 Que 1.
+\f0\b0\fs24 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf2 \CocoaLigature0 create table semp( \
+empno char(4), \
+empname char(20), \
+basic float, \
+deptno char(2), \
+depthead char(4) \
+);
+\f0\fs24 \cf0 \CocoaLigature1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf2 \CocoaLigature0 desc semp;\
+\
++----------+----------+------+-----+---------+-------+\
+| Field    | Type     | Null | Key | Default | Extra |\
++----------+----------+------+-----+---------+-------+\
+| empno    | char(4)  | YES  |     | NULL    |       |\
+| empname  | char(20) | YES  |     | NULL    |       |\
+| basic    | float    | YES  |     | NULL    |       |\
+| deptno   | char(2)  | YES  |     | NULL    |       |\
+| depthead | char(4)  | YES  |     | NULL    |       |\
++----------+----------+------+-----+---------+-------+\
+\
+
+\f0\fs24 \cf0 \CocoaLigature1 \
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+
+\f1\fs22 \cf2 \CocoaLigature0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f2\b\fs36 \cf0 \CocoaLigature1 Que 2.
+\f1\b0\fs22 \cf2 \CocoaLigature0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\
+create table sdept(\
+deptno char(2),\
+deptname char(15)\
+);\
+\
+Desc dept;\
+\
++----------+----------+------+-----+---------+-------+\
+| Field    | Type     | Null | Key | Default | Extra |\
++----------+----------+------+-----+---------+-------+\
+| deptno   | char(2)  | YES  |     | NULL    |       |\
+| deptname | char(15) | YES  |     | NULL    |       |\
++----------+----------+------+-----+---------+-------+\
+
+\f0\fs24 \cf0 \CocoaLigature1 \
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f2\b\fs36 \cf0 Que 3.
+\f0\b0\fs24 \
+\
+Insert into sdept values \
+(\'9210\'92, \'91Development\'92),\
+(\'9220\'92, \'91Training\'92);\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf2 \CocoaLigature0 desc sdept;\
++----------+----------+------+-----+---------+-------+\
+| Field    | Type     | Null | Key | Default | Extra |\
++----------+----------+------+-----+---------+-------+\
+| deptno   | char(2)  | YES  |     | NULL    |       |\
+| deptname | char(15) | YES  |     | NULL    |       |\
++----------+----------+------+-----+---------+-------+
+\f0\fs24 \cf0 \CocoaLigature1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf2 \CocoaLigature0 select * from sdept;\
++--------+-------------+\
+| deptno | deptname    |\
++--------+-------------+\
+| 10     | Development |\
+| 20     | Training    |\
++--------+-------------+
+\f0\fs24 \cf0 \CocoaLigature1 \
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+
+\f2\b\fs36 Que 4.
+\f0\b0\fs24 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf2 \CocoaLigature0 show tables;\
++------------------------------+\
+| Tables_in_exercise_questions |\
++------------------------------+\
+| sdept                        |\
+| semp                         |\
++------------------------------+
+\f0\fs24 \cf0 \CocoaLigature1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf2 \CocoaLigature0 desc semp;\
++----------+----------+------+-----+---------+-------+\
+| Field    | Type     | Null | Key | Default | Extra |\
++----------+----------+------+-----+---------+-------+\
+| empno    | char(4)  | YES  |     | NULL    |       |\
+| empname  | char(20) | YES  |     | NULL    |       |\
+| basic    | float    | YES  |     | NULL    |       |\
+| deptno   | char(2)  | YES  |     | NULL    |       |\
+| depthead | char(4)  | YES  |     | NULL    |       |\
++----------+----------+------+-----+---------+-------+\
+\
+insert into semp(empno, empname, basic, deptno) values ('0001', 'SUNIL' , 6000, '10\'92);\
+\
+insert into semp(empno, empname, basic, deptno, depthead) values ('0002','Hiren', 8000, '20',null), ('0003', 'Ali', 4000, '10', '0001'), ('0004', 'George' , 6000, null,'0002');\
+\
+select * from semp;\
++-------+---------+-------+--------+----------+\
+| empno | empname | basic | deptno | depthead |\
++-------+---------+-------+--------+----------+\
+| 0001  | SUNIL   |  6000 | 10     | NULL     |\
+| 0002  | Hiren   |  8000 | 20     | NULL     |\
+| 0003  | Ali     |  4000 | 10     | 0001     |\
+| 0004  | George  |  6000 | NULL   | 0002     |\
++-------+---------+-------+--------+----------+\
+\
+create table Supplier( `S#` char (5), Sname char(20), Status INT, City CHAR(15) );\
+\
+desc Supplier;\
++--------+----------+------+-----+---------+-------+\
+| Field  | Type     | Null | Key | Default | Extra |\
++--------+----------+------+-----+---------+-------+\
+| S#     | char(5)  | YES  |     | NULL    |       |\
+| Sname  | char(20) | YES  |     | NULL    |       |\
+| Status | int      | YES  |     | NULL    |       |\
+| City   | char(15) | YES  |     | NULL    |       |\
++--------+----------+------+-----+---------+-------+\
+\
+create table Parts( `P#` char (6), Pname char(20), Color char(6), Weight INT, City char(15));\
+\
+desc Parts;\
++--------+----------+------+-----+---------+-------+\
+| Field  | Type     | Null | Key | Default | Extra |\
++--------+----------+------+-----+---------+-------+\
+| P#     | char(6)  | YES  |     | NULL    |       |\
+| Pname  | char(20) | YES  |     | NULL    |       |\
+| Color  | char(6)  | YES  |     | NULL    |       |\
+| Weight | int      | YES  |     | NULL    |       |\
+| City   | char(15) | YES  |     | NULL    |       |\
++--------+----------+------+-----+---------+-------+\
+\
+create table Projects( `J#` char (4), Jname char(10), City char(15));
+\f3\fs24 \cf3 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+
+\f1\fs22 \cf2 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\
+desc Projects;\
++-------+----------+------+-----+---------+-------+\
+| Field | Type     | Null | Key | Default | Extra |\
++-------+----------+------+-----+---------+-------+\
+| J#    | char(4)  | YES  |     | NULL    |       |\
+| Jname | char(10) | YES  |     | NULL    |       |\
+| City  | char(15) | YES  |     | NULL    |       |\
++-------+----------+------+-----+---------+-------+\
+\
+create table `Supplier-Parts-Project`(`S#` char(4), `P#` char(4), `#J` char(4), Qty int);\
+\
+desc `Supplier-Parts-Project`;\
++-------+---------+------+-----+---------+-------+\
+| Field | Type    | Null | Key | Default | Extra |\
++-------+---------+------+-----+---------+-------+\
+| S#    | char(4) | YES  |     | NULL    |       |\
+| P#    | char(4) | YES  |     | NULL    |       |\
+| #J    | char(4) | YES  |     | NULL    |       |\
+| Qty   | int     | YES  |     | NULL    |       |\
++-------+---------+------+-----+---------+-------+\
+\
+show tables;\
++------------------------------+\
+| Tables_in_exercise_questions |\
++------------------------------+\
+| Parts                        |\
+| Projects                     |\
+| sdept                        |\
+| semp                         |\
+| Supplier                     |\
+| Supplier-Parts-Project       |\
++------------------------------+\
+\
+insert into Supplier values\
+    -> ('S1','Smith','20','London'),\
+    -> ('S2','Jones','10','Paris'),\
+    -> ('S3','Blake','30','Paris'),\
+    -> ('S4','Clark','20','London'),\
+    -> ('S5','Adams','30','Athens');\
+\
+select * from Supplier;\
++------+-------+--------+--------+\
+| S#   | Sname | Status | City   |\
++------+-------+--------+--------+\
+| S1   | Smith |     20 | London |\
+| S2   | Jones |     10 | Paris  |\
+| S3   | Blake |     30 | Paris  |\
+| S4   | Clark |     20 | London |\
+| S5   | Adams |     30 | Athens |\
++------+-------+--------+--------+\
+\
+insert into Parts values\
+    -> ('P1','Nut','Red',12,'London'), \
+    -> ('P2','Bolt','Green',17,'Paris'), \
+    -> ('P3','Screw','Blue',17,'Rome'), \
+    -> ('P4','Screw','Red',14,'London'), \
+    -> ('P5','Cam','Blue',12,'Paris'), \
+    -> ('P6','Cog','Red',19,'London');\
+\
+select * from Parts;\
++------+-------+-------+--------+--------+\
+| P#   | Pname | Color | Weight | City   |\
++------+-------+-------+--------+--------+\
+| P1   | Nut   | Red   |     12 | London |\
+| P2   | Bolt  | Green |     17 | Paris  |\
+| P3   | Screw | Blue  |     17 | Rome   |\
+| P4   | Screw | Red   |     14 | London |\
+| P5   | Cam   | Blue  |     12 | Paris  |\
+| P6   | Cog   | Red   |     19 | London |\
++------+-------+-------+--------+--------+\
+\
+insert into Projects values \
+    -> ('J1','Sorter','Paris'),  \
+    -> ('J2','Punch','Rome'),  \
+    -> ('J3','Reader','Athens'),  \
+    -> ('J4','Console','Athens'), \
+    -> ('J5','Collator','London'),  \
+    -> ('J6','Terminal','Oslo'), \
+    -> ('J7','Tape','London\'92);\
+\
+select * from Projects;\
++------+----------+--------+\
+| J#   | Jname    | City   |\
++------+----------+--------+\
+| J1   | Sorter   | Paris  |\
+| J2   | Punch    | Rome   |\
+| J3   | Reader   | Athens |\
+| J4   | Console  | Athens |\
+| J5   | Collator | London |\
+| J6   | Terminal | Oslo   |\
+| J7   | Tape     | London |\
++------+----------+--------+\
+\
+insert into `Supplier-Parts-Project` values\
+    -> ('S1', 'P1', 'J1' ,200),\
+    -> ('S1', 'P1', 'J4' ,700),\
+    -> ('S2', 'P3', 'J1' ,400),\
+    -> ('S2', 'P3', 'J2' ,200),\
+    -> ('S2', 'P3', 'J3' ,200),\
+    -> ('S2', 'P3', 'J4' ,500),\
+    -> ('S2', 'P3', 'J5' ,600),\
+    -> ('S2', 'P3', 'J6' ,400),\
+    -> ('S2', 'P3', 'J7' ,800),\
+    -> ('S2', 'P5', 'J2' ,100),\
+    -> ('S3', 'P3', 'J1' ,200),\
+    -> ('S3', 'P4', 'J2' ,500),\
+    -> ('S4', 'P6', 'J3' ,300),\
+    -> ('S4', 'P6', 'J7' ,300),\
+    -> ('S5', 'P2', 'J2' ,200),\
+    -> ('S5', 'P2', 'J4' ,100),\
+    -> ('S5', 'P5', 'J5' ,500),\
+    -> ('S5', 'P5', 'J7' ,100),\
+    -> ('S5', 'P6', 'J2' ,200),\
+    -> ('S5', 'P1', 'J2' ,200),\
+    -> ('S5', 'P3', 'J4' ,100),\
+    -> ('S5', 'P4', 'J4' ,800),\
+    -> ('S5', 'P5', 'J4' ,400),\
+    -> ('S5', 'P6', 'J4' ,500);\
+\
+select * from `Supplier-Parts-Project`;\
++------+------+------+------+\
+| S#   | P#   | #J   | Qty  |\
++------+------+------+------+\
+| S1   | P1   | J1   |  200 |\
+| S1   | P1   | J4   |  700 |\
+| S2   | P3   | J1   |  400 |\
+| S2   | P3   | J2   |  200 |\
+| S2   | P3   | J3   |  200 |\
+| S2   | P3   | J4   |  500 |\
+| S2   | P3   | J5   |  600 |\
+| S2   | P3   | J6   |  400 |\
+| S2   | P3   | J7   |  800 |\
+| S2   | P5   | J2   |  100 |\
+| S3   | P3   | J1   |  200 |\
+| S3   | P4   | J2   |  500 |\
+| S4   | P6   | J3   |  300 |\
+| S4   | P6   | J7   |  300 |\
+| S5   | P2   | J2   |  200 |\
+| S5   | P2   | J4   |  100 |\
+| S5   | P5   | J5   |  500 |\
+| S5   | P5   | J7   |  100 |\
+| S5   | P6   | J2   |  200 |\
+| S5   | P1   | J2   |  200 |\
+| S5   | P3   | J4   |  100 |\
+| S5   | P4   | J4   |  800 |\
+| S5   | P5   | J4   |  400 |\
+| S5   | P6   | J4   |  500 |\
++------+------+------+------+\
+\
+
+\f0\fs24 \cf0 \CocoaLigature1 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+
+\f2\b\fs36 Que 5.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b0\fs22 \cf2 \CocoaLigature0 select * from Supplier;\
++------+-------+--------+--------+\
+| S#   | Sname | Status | City   |\
++------+-------+--------+--------+\
+| S1   | Smith |     20 | London |\
+| S2   | Jones |     10 | Paris  |\
+| S3   | Blake |     30 | Paris  |\
+| S4   | Clark |     20 | London |\
+| S5   | Adams |     30 | Athens |\
++------+-------+--------+--------+\
+\
+
+\f0\fs24 \cf0 \CocoaLigature1 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+
+\f2\b\fs36 Que 6.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b0\fs22 \cf2 \CocoaLigature0 select `S#`, Sname from Supplier;\
++------+-------+\
+| S#   | Sname |\
++------+-------+\
+| S1   | Smith |\
+| S2   | Jones |\
+| S3   | Blake |\
+| S4   | Clark |\
+| S5   | Adams |\
++------+-------+\
+\
+
+\f0\fs24 \cf0 \CocoaLigature1 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+
+\f2\b\fs36 Que 7.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b0\fs22 \cf2 \CocoaLigature0 select Pname, Color from Parts where City = "London";\
++-------+-------+\
+| Pname | Color |\
++-------+-------+\
+| Nut   | Red   |\
+| Screw | Red   |\
+| Cog   | Red   |\
++-------+-------+\
+\
+
+\f0\fs24 \cf0 \CocoaLigature1 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+
+\f2\b\fs36 Que 8.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b0\fs22 \cf2 \CocoaLigature0 select * from Supplier where city = "London";\
++------+-------+--------+--------+\
+| S#   | Sname | Status | City   |\
++------+-------+--------+--------+\
+| S1   | Smith |     20 | London |\
+| S4   | Clark |     20 | London |\
++------+-------+--------+--------+\
+\
+
+\f0\fs24 \cf0 \CocoaLigature1 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+
+\f2\b\fs36 Que 9.
+\f1\b0\fs22 \cf2 \CocoaLigature0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f3\fs24 \cf3 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+
+\f1\fs22 \cf2 \kerning1\expnd0\expndtw0 \CocoaLigature0 select * from Supplier where city = "London" or city = "Athens";\
++------+-------+--------+--------+\
+| S#   | Sname | Status | City   |\
++------+-------+--------+--------+\
+| S1   | Smith |     20 | London |\
+| S4   | Clark |     20 | London |\
+| S5   | Adams |     30 | Athens |\
++------+-------+--------+--------+\
+\
+
+\f0\fs24 \cf0 \CocoaLigature1 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+
+\f2\b\fs36 Que 10.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b0\fs22 \cf2 \CocoaLigature0 select * from Projects where city = "Athens";\
++------+---------+--------+\
+| J#   | Jname   | City   |\
++------+---------+--------+\
+| J3   | Reader  | Athens |\
+| J4   | Console | Athens |\
++------+---------+--------+\
+\
+
+\f0\fs24 \cf0 \CocoaLigature1 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+
+\f2\b\fs36 Que 11.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b0\fs22 \cf2 \CocoaLigature0 select Pname from Parts where weight >= 12 and weight <=14;select Pname from Parts where weight >= 12 and weight <=14;\
++-------+\
+| Pname |\
++-------+\
+| Nut   |\
+| Screw |\
+| Cam   |\
++-------+\
+\
+
+\f0\fs24 \cf0 \CocoaLigature1 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+
+\f2\b\fs36 Que 12.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b0\fs22 \cf2 \CocoaLigature0 select * from Supplier where status >=20;\
++------+-------+--------+--------+\
+| S#   | Sname | Status | City   |\
++------+-------+--------+--------+\
+| S1   | Smith |     20 | London |\
+| S3   | Blake |     30 | Paris  |\
+| S4   | Clark |     20 | London |\
+| S5   | Adams |     30 | Athens |\
++------+-------+--------+--------+\
+\
+\
+
+\f0\fs24 \cf0 \CocoaLigature1 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+
+\f2\b\fs36 Que 13.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b0\fs22 \cf2 \CocoaLigature0 select * from Supplier where city != "London";\
++------+-------+--------+--------+\
+| S#   | Sname | Status | City   |\
++------+-------+--------+--------+\
+| S2   | Jones |     10 | Paris  |\
+| S3   | Blake |     30 | Paris  |\
+| S5   | Adams |     30 | Athens |\
++------+-------+--------+--------+\
+\
+
+\f0\fs24 \cf0 \CocoaLigature1 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+
+\f2\b\fs36 Que 14.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b0\fs22 \cf2 \CocoaLigature0 select city from Supplier;\
++--------+\
+| city   |\
++--------+\
+| London |\
+| Paris  |\
+| Paris  |\
+| London |\
+| Athens |\
++--------+\
+\
+
+\f0\fs24 \cf0 \CocoaLigature1 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+
+\f2\b\fs36 Que 15.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b0\fs22 \cf2 \CocoaLigature0 select weight "Grams (Original)", weight*1000 "Milligrams", weight*0.001 "Kilograms" from Parts;\
++------------------+------------+-----------+\
+| Grams (Original) | Milligrams | Kilograms |\
++------------------+------------+-----------+\
+|               12 |      12000 |     0.012 |\
+|               17 |      17000 |     0.017 |\
+|               17 |      17000 |     0.017 |\
+|               14 |      14000 |     0.014 |\
+|               12 |      12000 |     0.012 |\
+|               19 |      19000 |     0.019 |\
++------------------+------------+-----------+\
+\
+\
+
+\f0\fs24 \cf0 \CocoaLigature1 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97
+\f1\fs22 \cf2 \CocoaLigature0 \
+\
+
+\f2\b\fs36 \cf0 \CocoaLigature1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b0\fs22 \cf2 \CocoaLigature0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\
+
+\f0\fs24 \cf0 \CocoaLigature1 \
+\
+\
+}
