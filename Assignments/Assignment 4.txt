@@ -5,7 +5,7 @@ Assignment 4:
 
 Que 1.
 
-select onum "Order Number", amt "Amount", odate "Date" from orders;
+D3_80316_Anurag>select onum as "Order Number", amt "Amount", odate "Date" from orders;
 +--------------+---------+------------+
 | Order Number | Amount  | Date       |
 +--------------+---------+------------+
@@ -25,7 +25,7 @@ select onum "Order Number", amt "Amount", odate "Date" from orders;
 
 Que 2.
 
-select * from customers where snum = 1001;
+D3_80316_Anurag>select * from customers where snum = 1001;
 +------+---------+--------+--------+------+
 | Cnum | Cname   | City   | Rating | Snum |
 +------+---------+--------+--------+------+
@@ -37,7 +37,7 @@ select * from customers where snum = 1001;
 
 Que 3.
 
-select city, sname, snum, comm from salespeople;
+D3_80316_Anurag>select city, sname, snum, comm from salespeople;
 +-----------+---------+------+------+
 | city      | sname   | snum | comm |
 +-----------+---------+------+------+
@@ -52,12 +52,13 @@ select city, sname, snum, comm from salespeople;
 
 Que 4.
 
-select Rating, Cname from customers where city = 'San Jose';
-+--------+-------+
-| Rating | Cname |
-+--------+-------+
-|    200 | Liu   |
-+--------+-------+
+D3_80316_Anurag>select Rating, Cname from customers where city = 'San Jose';
++--------+----------+
+| Rating | Cname    |
++--------+----------+
+|    200 | Liu      |
+|    300 | Cisneros |
++--------+----------+
 
 ————————————————————————————————————————————————————————————————————————————————
 

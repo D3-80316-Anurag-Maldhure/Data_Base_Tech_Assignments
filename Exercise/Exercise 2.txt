@@ -5,7 +5,7 @@ Exercise 2:
 
 Que 1.
 
-select * from Supplier order by city desc;
+D3_80316_Anurag>select * from Supplier order by city desc;
 +------+-------+--------+--------+
 | S#   | Sname | Status | City   |
 +------+-------+--------+--------+
@@ -21,7 +21,7 @@ select * from Supplier order by city desc;
 
 Que 2.
 
-select * from Parts order by city, Pname;
+D3_80316_Anurag>select * from Parts order by city, Pname;
 +------+-------+-------+--------+--------+
 | P#   | Pname | Color | Weight | City   |
 +------+-------+-------+--------+--------+
@@ -38,7 +38,7 @@ select * from Parts order by city, Pname;
 
 Que 3.
 
-select * from Supplier where status between 10 and 20;
+D3_80316_Anurag>select * from Supplier where status between 10 and 20;
 +------+-------+--------+--------+
 | S#   | Sname | Status | City   |
 +------+-------+--------+--------+
@@ -51,7 +51,7 @@ select * from Supplier where status between 10 and 20;
 
 Que 4.
 
-select pname, weight from Parts where weight not between 10 and 15;
+D3_80316_Anurag>select pname, weight from Parts where weight not between 10 and 15;
 +-------+--------+
 | pname | weight |
 +-------+--------+
@@ -65,7 +65,7 @@ select pname, weight from Parts where weight not between 10 and 15;
 
 Que 5.
 
-select pname from Parts where pname like 's%';
+D3_80316_Anurag>select pname from Parts where pname like 's%';
 +-------+
 | pname |
 +-------+
@@ -78,7 +78,7 @@ select pname from Parts where pname like 's%';
 Que 6.
 
 
-select * from Supplier where city like 'L%';
+D3_80316_Anurag>select * from Supplier where city like 'L%';
 +------+-------+--------+--------+
 | S#   | Sname | Status | City   |
 +------+-------+--------+--------+
@@ -90,7 +90,7 @@ select * from Supplier where city like 'L%';
 
 Que 7.
 
-select * from Projects where jname like '__n%';
+D3_80316_Anurag>select * from Projects where jname like '__n%';
 +------+---------+--------+
 | J#   | Jname   | City   |
 +------+---------+--------+

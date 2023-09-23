@@ -1,11 +1,11 @@
 
 ————————————————————————————————————————————————————————————————————————————————
 
-Create database Assignment_Que;
+D3_80316_Anurag>create database Assignment_Que;
 
-Use Assignment_Que;
+D3_80316_Anurag>use Assignment_Que;
 
-select database();
+D3_80316_Anurag>select database();
 +----------------+
 | database()     |
 +----------------+
@@ -17,7 +17,7 @@ select database();
 Assignment 1:
 ————————————————————————————————————————————————————————————————————————————————
 
-create table SALESPEOPLE(
+D3_80316_Anurag>create table SALESPEOPLE(
     -> Snum int(4),
     -> Sname varchar(10),
     -> City varchar(10),
@@ -25,7 +25,7 @@ create table SALESPEOPLE(
     -> );
 
 
-desc SALESPEOPLE;
+D3_80316_Anurag>desc SALESPEOPLE;
 +-------+-------------+------+-----+---------+-------+
 | Field | Type        | Null | Key | Default | Extra |
 +-------+-------------+------+-----+---------+-------+
@@ -35,7 +35,7 @@ desc SALESPEOPLE;
 | Comm  | float(3,2)  | YES  |     | NULL    |       |
 +-------+-------------+------+-----+---------+-------+
 
-create table CUSTOMERS(
+D3_80316_Anurag>create table CUSTOMERS(
     -> Cnum int(4),
     -> Cname varchar(10),
     -> City varchar(10),
@@ -43,7 +43,7 @@ create table CUSTOMERS(
     -> Snum int(4)
     -> );
 
-desc CUSTOMERS;
+D3_80316_Anurag>desc CUSTOMERS;
 +--------+-------------+------+-----+---------+-------+
 | Field  | Type        | Null | Key | Default | Extra |
 +--------+-------------+------+-----+---------+-------+
@@ -54,7 +54,7 @@ desc CUSTOMERS;
 | Snum   | int         | YES  |     | NULL    |       |
 +--------+-------------+------+-----+---------+-------+
 
-create table ORDERS(
+D3_80316_Anurag>create table ORDERS(
     -> Onum int(4),
     -> Amt float(7,2),
     -> Odate date,
@@ -62,7 +62,7 @@ create table ORDERS(
     -> Snum int(4)
     -> );
 
-desc ORDERS;
+D3_80316_Anurag>desc ORDERS;
 +-------+------------+------+-----+---------+-------+
 | Field | Type       | Null | Key | Default | Extra |
 +-------+------------+------+-----+---------+-------+
@@ -74,14 +74,14 @@ desc ORDERS;
 +-------+------------+------+-----+---------+-------+
 
 
-insert into SALESPEOPLE values
+D3_80316_Anurag>insert into SALESPEOPLE values
     -> (1001, 'Peel', 'London', .12),
     -> (1002, 'Serres', 'San Jose', .13),
     -> (1004, 'Motika', 'London', .11),
     -> (1007, 'Rifkin', 'Barcelona', .15),
     -> (1003, 'Axelrod', 'New York', 10);
 
-select * from SALESPEOPLE;
+D3_80316_Anurag>select * from SALESPEOPLE;
 +------+---------+-----------+------+
 | Snum | Sname   | City      | Comm |
 +------+---------+-----------+------+
@@ -93,7 +93,7 @@ select * from SALESPEOPLE;
 +------+---------+-----------+------+
 
 
-insert into customers values
+D3_80316_Anurag>insert into customers values
     -> (2001, 'Hoffman', 'London', 100, 1001),
     -> (2002, 'Giovanni', 'Rome', 200, 1003),
     -> (2003, 'Liu', 'San Jose', 200, 1002),
@@ -101,7 +101,7 @@ insert into customers values
     -> (2006, 'Clemens', 'London', 100, 1001),
     -> (2007, 'Pereira', 'Rome', 100, 1004);
 
-select * from customers;
+D3_80316_Anurag>select * from customers;
 +------+----------+----------+--------+------+
 | Cnum | Cname    | City     | Rating | Snum |
 +------+----------+----------+--------+------+
@@ -114,7 +114,7 @@ select * from customers;
 +------+----------+----------+--------+------+
 
 
-insert into orders values 
+D3_80316_Anurag>insert into orders values 
     -> (3001, 18.69, '1990-10-03', 2008, 1007),
     -> (3003, 767.19, '1990-10-03', 2001, 1001),
     -> (3002, 1900.10, '1990-10-03', 2007, 1004),
@@ -126,7 +126,7 @@ insert into orders values
     -> (3010, 1309.95, '1990-10-06', 2004, 1002),
     -> (3011, 9891.88, '1990-10-06', 2006, 1001);
 
-select * from orders;
+D3_80316_Anurag>select * from orders;
 +------+---------+------------+------+------+
 | Onum | Amt     | Odate      | Cnum | Snum |
 +------+---------+------------+------+------+

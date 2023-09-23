@@ -1,11 +1,11 @@
 
 ————————————————————————————————————————————————————————————————————————————————
 
-Create database exercise_questions;
+D3_80316_Anurag>create database exercise_questions;
 
-Use exercise_questions;
+D3_80316_Anurag>use exercise_questions;
 
-Select database();
+D3_80316_Anurag>select database();
 +--------------------+
 | database()         |
 +--------------------+
@@ -19,7 +19,7 @@ Exercise 1:
 
 Que 1.
 
-create table semp( 
+D3_80316_Anurag>create table semp( 
 empno char(4), 
 empname char(20), 
 basic float, 
@@ -27,7 +27,7 @@ deptno char(2),
 depthead char(4) 
 );
 
-desc semp;
+D3_80316_Anurag>desc semp;
 
 +----------+----------+------+-----+---------+-------+
 | Field    | Type     | Null | Key | Default | Extra |
@@ -44,12 +44,12 @@ desc semp;
 
 Que 2.
 
-create table sdept(
+D3_80316_Anurag>create table sdept(
 deptno char(2),
 deptname char(15)
 );
 
-Desc dept;
+D3_80316_Anurag>desc dept;
 
 +----------+----------+------+-----+---------+-------+
 | Field    | Type     | Null | Key | Default | Extra |
@@ -62,11 +62,11 @@ Desc dept;
 
 Que 3.
 
-Insert into sdept values 
+D3_80316_Anurag>insert into sdept values 
 (’10’, ‘Development’),
 (’20’, ‘Training’);
 
-desc sdept;
+D3_80316_Anurag>desc sdept;
 +----------+----------+------+-----+---------+-------+
 | Field    | Type     | Null | Key | Default | Extra |
 +----------+----------+------+-----+---------+-------+
@@ -74,7 +74,7 @@ desc sdept;
 | deptname | char(15) | YES  |     | NULL    |       |
 +----------+----------+------+-----+---------+-------+
 
-select * from sdept;
+D3_80316_Anurag>select * from sdept;
 +--------+-------------+
 | deptno | deptname    |
 +--------+-------------+
@@ -86,7 +86,7 @@ select * from sdept;
 
 Que 4.
 
-show tables;
+D3_80316_Anurag>show tables;
 +------------------------------+
 | Tables_in_exercise_questions |
 +------------------------------+
@@ -94,7 +94,7 @@ show tables;
 | semp                         |
 +------------------------------+
 
-desc semp;
+D3_80316_Anurag>desc semp;
 +----------+----------+------+-----+---------+-------+
 | Field    | Type     | Null | Key | Default | Extra |
 +----------+----------+------+-----+---------+-------+
@@ -105,11 +105,11 @@ desc semp;
 | depthead | char(4)  | YES  |     | NULL    |       |
 +----------+----------+------+-----+---------+-------+
 
-insert into semp(empno, empname, basic, deptno) values ('0001', 'SUNIL' , 6000, '10’);
+D3_80316_Anurag>insert into semp(empno, empname, basic, deptno) values ('0001', 'SUNIL' , 6000, '10’);
 
-insert into semp(empno, empname, basic, deptno, depthead) values ('0002','Hiren', 8000, '20',null), ('0003', 'Ali', 4000, '10', '0001'), ('0004', 'George' , 6000, null,'0002');
+D3_80316_Anurag>insert into semp(empno, empname, basic, deptno, depthead) values ('0002','Hiren', 8000, '20',null), ('0003', 'Ali', 4000, '10', '0001'), ('0004', 'George' , 6000, null,'0002');
 
-select * from semp;
+D3_80316_Anurag>select * from semp;
 +-------+---------+-------+--------+----------+
 | empno | empname | basic | deptno | depthead |
 +-------+---------+-------+--------+----------+
@@ -119,9 +119,9 @@ select * from semp;
 | 0004  | George  |  6000 | NULL   | 0002     |
 +-------+---------+-------+--------+----------+
 
-create table Supplier( `S#` char (5), Sname char(20), Status INT, City CHAR(15) );
+D3_80316_Anurag>create table Supplier( `S#` char (5), Sname char(20), Status INT, City CHAR(15) );
 
-desc Supplier;
+D3_80316_Anurag>desc Supplier;
 +--------+----------+------+-----+---------+-------+
 | Field  | Type     | Null | Key | Default | Extra |
 +--------+----------+------+-----+---------+-------+
@@ -131,9 +131,9 @@ desc Supplier;
 | City   | char(15) | YES  |     | NULL    |       |
 +--------+----------+------+-----+---------+-------+
 
-create table Parts( `P#` char (6), Pname char(20), Color char(6), Weight INT, City char(15));
+D3_80316_Anurag>create table Parts( `P#` char (6), Pname char(20), Color char(6), Weight INT, City char(15));
 
-desc Parts;
+D3_80316_Anurag>desc Parts;
 +--------+----------+------+-----+---------+-------+
 | Field  | Type     | Null | Key | Default | Extra |
 +--------+----------+------+-----+---------+-------+
@@ -144,10 +144,10 @@ desc Parts;
 | City   | char(15) | YES  |     | NULL    |       |
 +--------+----------+------+-----+---------+-------+
 
-create table Projects( `J#` char (4), Jname char(10), City char(15));
+D3_80316_Anurag>create table Projects( `J#` char (4), Jname char(10), City char(15));
 
 
-desc Projects;
+D3_80316_Anurag>desc Projects;
 +-------+----------+------+-----+---------+-------+
 | Field | Type     | Null | Key | Default | Extra |
 +-------+----------+------+-----+---------+-------+
@@ -156,9 +156,9 @@ desc Projects;
 | City  | char(15) | YES  |     | NULL    |       |
 +-------+----------+------+-----+---------+-------+
 
-create table `Supplier-Parts-Project`(`S#` char(4), `P#` char(4), `#J` char(4), Qty int);
+D3_80316_Anurag>create table `Supplier-Parts-Project`(`S#` char(4), `P#` char(4), `#J` char(4), Qty int);
 
-desc `Supplier-Parts-Project`;
+D3_80316_Anurag>desc `Supplier-Parts-Project`;
 +-------+---------+------+-----+---------+-------+
 | Field | Type    | Null | Key | Default | Extra |
 +-------+---------+------+-----+---------+-------+
@@ -168,7 +168,7 @@ desc `Supplier-Parts-Project`;
 | Qty   | int     | YES  |     | NULL    |       |
 +-------+---------+------+-----+---------+-------+
 
-show tables;
+D3_80316_Anurag>show tables;
 +------------------------------+
 | Tables_in_exercise_questions |
 +------------------------------+
@@ -180,14 +180,14 @@ show tables;
 | Supplier-Parts-Project       |
 +------------------------------+
 
-insert into Supplier values
+D3_80316_Anurag>insert into Supplier values
     -> ('S1','Smith','20','London'),
     -> ('S2','Jones','10','Paris'),
     -> ('S3','Blake','30','Paris'),
     -> ('S4','Clark','20','London'),
     -> ('S5','Adams','30','Athens');
 
-select * from Supplier;
+D3_80316_Anurag>select * from Supplier;
 +------+-------+--------+--------+
 | S#   | Sname | Status | City   |
 +------+-------+--------+--------+
@@ -198,7 +198,7 @@ select * from Supplier;
 | S5   | Adams |     30 | Athens |
 +------+-------+--------+--------+
 
-insert into Parts values
+D3_80316_Anurag>insert into Parts values
     -> ('P1','Nut','Red',12,'London'), 
     -> ('P2','Bolt','Green',17,'Paris'), 
     -> ('P3','Screw','Blue',17,'Rome'), 
@@ -206,7 +206,7 @@ insert into Parts values
     -> ('P5','Cam','Blue',12,'Paris'), 
     -> ('P6','Cog','Red',19,'London');
 
-select * from Parts;
+D3_80316_Anurag>select * from Parts;
 +------+-------+-------+--------+--------+
 | P#   | Pname | Color | Weight | City   |
 +------+-------+-------+--------+--------+
@@ -218,7 +218,7 @@ select * from Parts;
 | P6   | Cog   | Red   |     19 | London |
 +------+-------+-------+--------+--------+
 
-insert into Projects values 
+D3_80316_Anurag>insert into Projects values 
     -> ('J1','Sorter','Paris'),  
     -> ('J2','Punch','Rome'),  
     -> ('J3','Reader','Athens'),  
@@ -227,7 +227,7 @@ insert into Projects values
     -> ('J6','Terminal','Oslo'), 
     -> ('J7','Tape','London’);
 
-select * from Projects;
+D3_80316_Anurag>select * from Projects;
 +------+----------+--------+
 | J#   | Jname    | City   |
 +------+----------+--------+
@@ -240,7 +240,7 @@ select * from Projects;
 | J7   | Tape     | London |
 +------+----------+--------+
 
-insert into `Supplier-Parts-Project` values
+D3_80316_Anurag>insert into `Supplier-Parts-Project` values
     -> ('S1', 'P1', 'J1' ,200),
     -> ('S1', 'P1', 'J4' ,700),
     -> ('S2', 'P3', 'J1' ,400),
@@ -266,7 +266,7 @@ insert into `Supplier-Parts-Project` values
     -> ('S5', 'P5', 'J4' ,400),
     -> ('S5', 'P6', 'J4' ,500);
 
-select * from `Supplier-Parts-Project`;
+D3_80316_Anurag>select * from `Supplier-Parts-Project`;
 +------+------+------+------+
 | S#   | P#   | #J   | Qty  |
 +------+------+------+------+
@@ -300,7 +300,7 @@ select * from `Supplier-Parts-Project`;
 
 Que 5.
 
-select * from Supplier;
+D3_80316_Anurag>select * from Supplier;
 +------+-------+--------+--------+
 | S#   | Sname | Status | City   |
 +------+-------+--------+--------+
@@ -315,7 +315,7 @@ select * from Supplier;
 
 Que 6.
 
-select `S#`, Sname from Supplier;
+D3_80316_Anurag>select `S#`, Sname from Supplier;
 +------+-------+
 | S#   | Sname |
 +------+-------+
@@ -330,7 +330,7 @@ select `S#`, Sname from Supplier;
 
 Que 7.
 
-select Pname, Color from Parts where City = "London";
+D3_80316_Anurag>select Pname, Color from Parts where City = "London";
 +-------+-------+
 | Pname | Color |
 +-------+-------+
@@ -343,7 +343,7 @@ select Pname, Color from Parts where City = "London";
 
 Que 8.
 
-select * from Supplier where city = "London";
+D3_80316_Anurag>select * from Supplier where city = "London";
 +------+-------+--------+--------+
 | S#   | Sname | Status | City   |
 +------+-------+--------+--------+
@@ -355,7 +355,7 @@ select * from Supplier where city = "London";
 
 Que 9.
 
-select * from Supplier where city = "London" or city = "Athens";
+D3_80316_Anurag>select * from Supplier where city = "London" or city = "Athens";
 +------+-------+--------+--------+
 | S#   | Sname | Status | City   |
 +------+-------+--------+--------+
@@ -368,7 +368,7 @@ select * from Supplier where city = "London" or city = "Athens";
 
 Que 10.
 
-select * from Projects where city = "Athens";
+D3_80316_Anurag>select * from Projects where city = "Athens";
 +------+---------+--------+
 | J#   | Jname   | City   |
 +------+---------+--------+
@@ -380,7 +380,7 @@ select * from Projects where city = "Athens";
 
 Que 11.
 
-select Pname from Parts where weight >= 12 and weight <=14;select Pname from Parts where weight >= 12 and weight <=14;
+D3_80316_Anurag>select Pname from Parts where weight >= 12 and weight <=14;select Pname from Parts where weight >= 12 and weight <=14;
 +-------+
 | Pname |
 +-------+
@@ -393,7 +393,7 @@ select Pname from Parts where weight >= 12 and weight <=14;select Pname from Par
 
 Que 12.
 
-select * from Supplier where status >=20;
+D3_80316_Anurag>select * from Supplier where status >=20;
 +------+-------+--------+--------+
 | S#   | Sname | Status | City   |
 +------+-------+--------+--------+
@@ -408,7 +408,7 @@ select * from Supplier where status >=20;
 
 Que 13.
 
-select * from Supplier where city != "London";
+D3_80316_Anurag>select * from Supplier where city != "London";
 +------+-------+--------+--------+
 | S#   | Sname | Status | City   |
 +------+-------+--------+--------+
@@ -421,7 +421,7 @@ select * from Supplier where city != "London";
 
 Que 14.
 
-select city from Supplier;
+D3_80316_Anurag>select city from Supplier;
 +--------+
 | city   |
 +--------+
@@ -434,7 +434,7 @@ select city from Supplier;
 
 ————————————————————————————————————————————————————————————————————————————————
 
-Que 15.
+D3_80316_Anurag>Que 15.
 
 select weight "Grams (Original)", weight*1000 "Milligrams", weight*0.001 "Kilograms" from Parts;
 +------------------+------------+-----------+
