@@ -1,0 +1,31 @@
+
+————————————————————————————————————————————————————————————————————————————————
+Assignment 2:
+————————————————————————————————————————————————————————————————————————————————
+
+Que 1. Which field of the Customers table is the Primary Key?
+Ans: Cnum field is the Primary Key of Customer table.
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 2. What is the 4th column of the Customers table?
+Ans: Rating is the 4th column of the Customers table.
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 3. What is another word Row? for Column?
+Ans: Row can also be called as Tuple or Entity.
+     Column can also be called as Attribute.
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 4. Why isn't it possible to see the first five rows of a table?
+Ans: Because it depends on the row address and not on the order of insertion.
+
+————————————————————————————————————————————————————————————————————————————————
+
+
+
+
+
+

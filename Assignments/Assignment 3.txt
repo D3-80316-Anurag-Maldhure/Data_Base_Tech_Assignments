@@ -1,0 +1,24 @@
+
+————————————————————————————————————————————————————————————————————————————————
+Assignment 3:
+————————————————————————————————————————————————————————————————————————————————
+
+Que 1. Does ANSI recognize the data type DATE?
+Ans : date complies with the ANSI SQL standard definition for the Gregorian calendar.
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 2. Which subdivision of SQL is used to insert values in tables?
+Ans : DML subdivision of SQL is used to insert values in tables.
+      DML stands for Data Manipulation Language
+      it consists of 3 commands :
+        1. INSERT
+        2. UPDATE
+        3. DELETE.
+
+
+————————————————————————————————————————————————————————————————————————————————
+
+
+
+
