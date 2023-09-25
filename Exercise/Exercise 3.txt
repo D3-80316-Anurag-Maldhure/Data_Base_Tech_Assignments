@@ -1,0 +1,152 @@
+
+————————————————————————————————————————————————————————————————————————————————
+Exercise 3:
+————————————————————————————————————————————————————————————————————————————————
+
+Que 1.
+
+D3_80316_Anurag>select concat(upper(substr(sname,1,1)),substr(sname,2)) "Supplier names with the initial letter capital" from supplier;
++------------------------------------------------+
+| Supplier names with the initial letter capital |
++------------------------------------------------+
+| Smith                                          |
+| Jones                                          |
+| Blake                                          |
+| Clark                                          |
+| Adams                                          |
++------------------------------------------------+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 2.
+
+D3_80316_Anurag>select upper(sname) "Supplier names in upper case" from supplier;
++------------------------------+
+| Supplier names in upper case |
++------------------------------+
+| SMITH                        |
+| JONES                        |
+| BLAKE                        |
+| CLARK                        |
+| ADAMS                        |
++------------------------------+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 3.
+
+D3_80316_Anurag>select lower(sname) "Supplier names in upper case" from supplier;
++------------------------------+
+| Supplier names in upper case |
++------------------------------+
+| smith                        |
+| jones                        |
+| blake                        |
+| clark                        |
+| adams                        |
++------------------------------+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 4.
+
+D3_80316_Anurag>select lpad(sname,'25',' ') "Supplier names" from supplier;
++---------------------------+
+| Supplier names            |
++---------------------------+
+|                     Smith |
+|                     Jones |
+|                     Blake |
+|                     Clark |
+|                     Adams |
++---------------------------+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 5.
+
+D3_80316_Anurag>select replace(sname,'la','ro') from supplier;
++--------------------------+
+| replace(sname,'la','ro') |
++--------------------------+
+| Smith                    |
+| Jones                    |
+| Broke                    |
+| Crork                    |
+| Adams                    |
++--------------------------+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 6.
+
+D3_80316_Anurag>select replace(replace(sname,'l','r'),'a','o') from supplier;
++-----------------------------------------+
+| replace(replace(sname,'l','r'),'a','o') |
++-----------------------------------------+
+| Smith                                   |
+| Jones                                   |
+| Broke                                   |
+| Crork                                   |
+| Adoms                                   |
++-----------------------------------------+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 7.
+
+D3_80316_Anurag>select sname, length(sname) from supplier;
++-------+---------------+
+| sname | length(sname) |
++-------+---------------+
+| Smith |             5 |
+| Jones |             5 |
+| Blake |             5 |
+| Clark |             5 |
+| Adams |             5 |
++-------+---------------+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 8.
+
+D3_80316_Anurag>select * from supplier where soundex(sname) = soundex('Bloke');
++------+-------+--------+-------+
+| S#   | Sname | Status | City  |
++------+-------+--------+-------+
+| S3   | Blake |     30 | Paris |
++------+-------+--------+-------+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 9.
+
+D3_80316_Anurag>select sname, case when status = 10 then 'Ten' 
+    ->when status = 20 then 'Twenty' 
+    ->when status = 30 then 'Thirty' 
+    ->else 'Not defined' 
+    ->end 'Status' 
+    ->from supplier;
++-------+--------+
+| sname | Status |
++-------+--------+
+| Smith | Twenty |
+| Jones | Ten    |
+| Blake | Thirty |
+| Clark | Twenty |
+| Adams | Thirty |
++-------+--------+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 10.
+
+D3_80316_Anurag>select dayname(sysdate()) from dual;
++--------------------+
+| dayname(sysdate()) |
++--------------------+
+| Monday             |
++--------------------+
+
+————————————————————————————————————————————————————————————————————————————————
+

@@ -1,0 +1,174 @@
+
+————————————————————————————————————————————————————————————————————————————————
+Exercise 4:
+————————————————————————————————————————————————————————————————————————————————
+
+Que 1.
+
+D3_80316_Anurag>select min(status) from supplier;
++-------------+
+| min(status) |
++-------------+
+|          10 |
++-------------+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 2.
+
+D3_80316_Anurag>select max(weight) from parts;
++-------------+
+| max(weight) |
++-------------+
+|          19 |
++-------------+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 3.
+
+D3_80316_Anurag>select avg(weight) from parts;
++-------------+
+| avg(weight) |
++-------------+
+|     15.1667 |
++-------------+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 4.
+
+D3_80316_Anurag>select sum(qty) "Total Quantity of Parts P1 sold" from `Supplier-Parts-Project` where `p#` = 'p1';
++---------------------------------+
+| Total Quantity of Parts P1 sold |
++---------------------------------+
+|                            1100 |
++---------------------------------+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 5.
+
+D3_80316_Anurag>select `P#`, sum(qty) "Total Quantity of Parts sold" from `Supplier-Parts-Project` group by `p#` order by `p#`;
++------+------------------------------+
+| P#   | Total Quantity of Parts sold |
++------+------------------------------+
+| P1   |                         1100 |
+| P2   |                          300 |
+| P3   |                         3400 |
+| P4   |                         1300 |
+| P5   |                         1100 |
+| P6   |                         1300 |
++------+------------------------------+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 6.
+
+D3_80316_Anurag>select `P#`, avg(qty) "Average Quantity of Parts sold" from `Supplier-Parts-Project` group by `p#` order by `p#`;
++------+--------------------------------+
+| P#   | Average Quantity of Parts sold |
++------+--------------------------------+
+| P1   |                       366.6667 |
+| P2   |                       150.0000 |
+| P3   |                       377.7778 |
+| P4   |                       650.0000 |
+| P5   |                       275.0000 |
+| P6   |                       325.0000 |
++------+--------------------------------+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 7.
+
+D3_80316_Anurag>select `P#`, max(qty) "maximum Quantity sold > 800" from `Supplier-Parts-Project` group by `p#` having max(qty)>800 order by `p#`;
+Empty set (0.00 sec)
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 8.
+
+D3_80316_Anurag>select status, count(status) from supplier group by status order by status;
++--------+---------------+
+| status | count(status) |
++--------+---------------+
+|     10 |             1 |
+|     20 |             2 |
+|     30 |             2 |
++--------+---------------+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 9.
+
+D3_80316_Anurag>select city, count(city) from Projects group by city;
++--------+-------------+
+| city   | count(city) |
++--------+-------------+
+| Paris  |           1 |
+| Rome   |           1 |
+| Athens |           2 |
+| London |           2 |
+| Oslo   |           1 |
++--------+-------------+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 10.
+
+COUNT(Status) gives count of rows with no null values in status column and 
+COUNT(*) gives count of all the rows (even with null values in status column).
+
+
+D3_80316_Anurag>select * from Supplier;
++------+-------+--------+--------+
+| S#   | Sname | Status | City   |
++------+-------+--------+--------+
+| S1   | Smith |     20 | London |
+| S2   | Jones |     10 | Paris  |
+| S3   | Blake |     30 | Paris  |
+| S4   | Clark |     20 | London |
+| S5   | Adams |     30 | Athens |
++------+-------+--------+--------+
+
+D3_80316_Anurag>select count(status) from Supplier;
++---------------+
+| count(status) |
++---------------+
+|             5 |
++---------------+
+
+D3_80316_Anurag>select count(*) from Supplier;
++----------+
+| count(*) |
++----------+
+|        5 |
++----------+
+
+Since there are no null values in supplier table so we are getting the same value for both the queries.
+
+————————————————————————————————————————————————————————————————————————————————
+
+
+Que 11.
+
+select case when status = 10 then 'Ten' 
+    -> when status = 20 then 'Twenty' 
+    -> when status = 30 then 'Thirty' 
+    -> else 'Not defined' 
+    -> end "Status", 
+    -> count(status) "Count" 
+    -> from supplier 
+    -> group by status 
+    -> order by status;
+
++--------+-------+
+| Status | Count |
++--------+-------+
+| Ten    |     1 |
+| Thirty |     2 |
+| Twenty |     2 |
++--------+-------+
+
+————————————————————————————————————————————————————————————————————————————————
+
