@@ -1,0 +1,54 @@
+
+————————————————————————————————————————————————————————————————————————————————
+Assignment 10:
+————————————————————————————————————————————————————————————————————————————————
+
+Que 1.
+
+D3_80316_Anurag>select a.sname, b.sname from salespeople b, salespeople a 
+    -> where b.city = a.city 
+    -> having a.sname != b.sname 
+    -> and a.sname < b.sname;
++--------+-------+
+| sname  | sname |
++--------+-------+
+| Motika | Peel  |
++--------+-------+
+1 row in set (0.01 sec)
+
+OR 
+
+D3_80316_Anurag>select a.sname, b.sname from salespeople b, salespeople a 
+    -> where b.city = a.city 
+    -> having a.sname != b.sname 
+    -> and a.sname > b.sname;
++-------+--------+
+| sname | sname  |
++-------+--------+
+| Peel  | Motika |
++-------+--------+
+1 row in set (0.01 sec)
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 2.
+
+Using sub query: 
+
+D3_80316_Anurag>select customers.cname, customers.city from customers 
+    -> where customers.rating = 
+    -> (select customers.rating from customers 
+    -> where customers.cname = 'Hoffman') 
+    -> and customers.cname != 'Hoffman';
++---------+--------+
+| cname   | city   |
++---------+--------+
+| Clemens | London |
+| Pereira | Rome   |
++---------+--------+
+2 rows in set (0.01 sec)
+
+————————————————————————————————————————————————————————————————————————————————
+
+
+
