@@ -5,116 +5,67 @@ Exercise 5:
 
 Que 1.
 
-D3_80316_Anurag>select supplier.sname "Supplier", `Supplier-Parts-Project`.qty "Quantity sold" 
-    -> from `Supplier-Parts-Project`, supplier
-    -> where supplier.`S#`= `Supplier-Parts-Project`.`S#`;
+D3_80316_Anurag>select supplier.sname "Supplier", sum(`Supplier-Parts-Project`.qty) "Quantity sold"
+    -> from supplier, `Supplier-Parts-Project` 
+    -> where supplier.`s#` = `Supplier-Parts-Project`.`s#`
+    -> group by supplier.sname;
 +----------+---------------+
 | Supplier | Quantity sold |
 +----------+---------------+
-| Smith    |           200 |
-| Smith    |           700 |
-| Jones    |           400 |
-| Jones    |           200 |
-| Jones    |           200 |
-| Jones    |           500 |
-| Jones    |           600 |
-| Jones    |           400 |
-| Jones    |           800 |
-| Jones    |           100 |
-| Blake    |           200 |
-| Blake    |           500 |
-| Clark    |           300 |
-| Clark    |           300 |
-| Adams    |           200 |
-| Adams    |           100 |
-| Adams    |           500 |
-| Adams    |           100 |
-| Adams    |           200 |
-| Adams    |           200 |
-| Adams    |           100 |
-| Adams    |           800 |
-| Adams    |           400 |
-| Adams    |           500 |
+| Smith    |           900 |
+| Jones    |          3200 |
+| Blake    |           700 |
+| Clark    |           600 |
+| Adams    |          3100 |
 +----------+---------------+
+5 rows in set (0.00 sec)
 
 ————————————————————————————————————————————————————————————————————————————————
 
 Que 2.
 
-D3_80316_Anurag>select parts.pname "Part Name", `Supplier-Parts-Project`.qty "Quantity sold" 
-    -> from `Supplier-Parts-Project`, parts
-    -> where parts.`P#` = `Supplier-Parts-Project`.`P#`;
+D3_80316_Anurag>select parts.pname "Part Name", sum(`Supplier-Parts-Project`.qty) "Quantity sold"
+    -> from parts, `Supplier-Parts-Project`
+    -> where parts.`P#` = `Supplier-Parts-Project`.`P#`
+    -> group by parts.pname;
 +-----------+---------------+
 | Part Name | Quantity sold |
 +-----------+---------------+
-| Nut       |           200 |
-| Nut       |           700 |
-| Screw     |           400 |
-| Screw     |           200 |
-| Screw     |           200 |
-| Screw     |           500 |
-| Screw     |           600 |
-| Screw     |           400 |
-| Screw     |           800 |
-| Cam       |           100 |
-| Screw     |           200 |
-| Screw     |           500 |
-| Cog       |           300 |
-| Cog       |           300 |
-| Bolt      |           200 |
-| Bolt      |           100 |
-| Cam       |           500 |
-| Cam       |           100 |
-| Cog       |           200 |
-| Nut       |           200 |
-| Screw     |           100 |
-| Screw     |           800 |
-| Cam       |           400 |
-| Cog       |           500 |
+| Nut       |          1100 |
+| Screw     |          4700 |
+| Cam       |          1100 |
+| Cog       |          1300 |
+| Bolt      |           300 |
 +-----------+---------------+
+5 rows in set (0.00 sec)
 
 ————————————————————————————————————————————————————————————————————————————————
 
 Que 3.
 
-D3_80316_Anurag>select projects.jname "Project Name", `Supplier-Parts-Project`.qty "Quantity sold" 
-    -> from `Supplier-Parts-Project`, projects 
-    -> where projects.`J#` = `Supplier-Parts-Project`.`#J`;
+D3_80316_Anurag>select projects.jname "Project Name", sum(`Supplier-Parts-Project`.qty) "Quantity sold" 
+    -> from `Supplier-Parts-Project`, projects
+    -> where projects.`J#` = `Supplier-Parts-Project`.`#J`
+    -> group by projects.jname;
 +--------------+---------------+
 | Project Name | Quantity sold |
 +--------------+---------------+
-| Sorter       |           200 |
-| Console      |           700 |
-| Sorter       |           400 |
-| Punch        |           200 |
-| Reader       |           200 |
-| Console      |           500 |
-| Collator     |           600 |
+| Sorter       |           800 |
+| Console      |          3100 |
+| Punch        |          1400 |
+| Reader       |           500 |
+| Collator     |          1100 |
 | Terminal     |           400 |
-| Tape         |           800 |
-| Punch        |           100 |
-| Sorter       |           200 |
-| Punch        |           500 |
-| Reader       |           300 |
-| Tape         |           300 |
-| Punch        |           200 |
-| Console      |           100 |
-| Collator     |           500 |
-| Tape         |           100 |
-| Punch        |           200 |
-| Punch        |           200 |
-| Console      |           100 |
-| Console      |           800 |
-| Console      |           400 |
-| Console      |           500 |
+| Tape         |          1200 |
 +--------------+---------------+
+7 rows in set (0.01 sec)
 
 ————————————————————————————————————————————————————————————————————————————————
 
 Que 4.
 
-D3_80316_Anurag>select supplier.sname "Supplier", parts.pname "Part", projects.jname "Project", `Supplier-Parts-Project`.qty "Quantity sold"  
-    -> from `Supplier-Parts-Project`,supplier, parts, projects 
+D3_80316_Anurag>select supplier.sname "Supplier", parts.pname "Part", projects.jname "Project", `Supplier-Parts-Project`.qty "Quantity sold"   
+    -> from `Supplier-Parts-Project`,supplier, parts, projects  
     -> where `Supplier-Parts-Project`.`s#` = supplier.`s#` AND  
     -> `Supplier-Parts-Project`.`p#` = parts.`p#` AND 
     -> `Supplier-Parts-Project`.`#j` = projects.`j#`;
@@ -146,129 +97,113 @@ D3_80316_Anurag>select supplier.sname "Supplier", parts.pname "Part", projects.j
 | Adams    | Cam   | Tape     |           100 |
 | Jones    | Screw | Tape     |           800 |
 +----------+-------+----------+---------------+
+24 rows in set (0.00 sec)
 
 ————————————————————————————————————————————————————————————————————————————————
 
 Que 5.
 
-D3_80316_Anurag>select supplier.sname "Supplier" from supplier, projects, parts  where supplier.city = projects.city and projects.city = parts.city;
-+----------+
-| Supplier |
-+----------+
-| Jones    |
-| Blake    |
-| Jones    |
-| Blake    |
-| Smith    |
-| Clark    |
-| Smith    |
-| Clark    |
-| Smith    |
-| Clark    |
-| Smith    |
-| Clark    |
-| Smith    |
-| Clark    |
-| Smith    |
-| Clark    |
-+----------+
+D3_80316_Anurag>select supplier.sname "Supplier", projects.jname "Project", supplier.city "City" 
+    -> from supplier, projects 
+    -> where supplier.city = projects.city;
++----------+----------+--------+
+| Supplier | Project  | City   |
++----------+----------+--------+
+| Blake    | Sorter   | Paris  |
+| Jones    | Sorter   | Paris  |
+| Adams    | Reader   | Athens |
+| Adams    | Console  | Athens |
+| Clark    | Collator | London |
+| Smith    | Collator | London |
+| Clark    | Tape     | London |
+| Smith    | Tape     | London |
++----------+----------+--------+
+8 rows in set (0.00 sec)
 
 ————————————————————————————————————————————————————————————————————————————————
 
 Que 6.
 
-D3_80316_Anurag>select parts.pname "Part", `Supplier-Parts-Project`.qty "Quantity sold" 
-    -> from parts, `Supplier-Parts-Project` 
-    -> where parts.`p#` = `Supplier-Parts-Project`.`p#` and parts.color = 'Red';
+D3_80316_Anurag>select parts.pname "Part", sum(`Supplier-Parts-Project`.qty) "Quantity sold"
+    -> from parts, `Supplier-Parts-Project`
+    -> where parts.`p#` = `Supplier-Parts-Project`.`p#`
+    -> and parts.color = 'Red'
+    -> group by parts.pname;
 +-------+---------------+
 | Part  | Quantity sold |
 +-------+---------------+
-| Nut   |           200 |
-| Nut   |           700 |
-| Screw |           500 |
-| Cog   |           300 |
-| Cog   |           300 |
-| Cog   |           200 |
-| Nut   |           200 |
-| Screw |           800 |
-| Cog   |           500 |
+| Nut   |          1100 |
+| Screw |          1300 |
+| Cog   |          1300 |
 +-------+---------------+
+3 rows in set (0.00 sec)
 
 ————————————————————————————————————————————————————————————————————————————————
 
 Que 7.
 
-D3_80316_Anurag>select `Supplier-Parts-Project`.qty "Quantity", supplier.sname "Supplier" 
-    -> from `Supplier-Parts-Project`, supplier 
-    -> where `Supplier-Parts-Project`.`s#` = supplier.`s#` and status = 20;
-+----------+----------+
-| Quantity | Supplier |
-+----------+----------+
-|      200 | Smith    |
-|      700 | Smith    |
-|      300 | Clark    |
-|      300 | Clark    |
-+----------+----------+
+D3_80316_Anurag>select sum(`Supplier-Parts-Project`.qty) "Quantity", supplier.sname "Supplier", supplier.status from `Supplier-Parts-Project`, supplier  where `Supplier-Parts-Project`.`s#` = supplier.`s#` and status = 20 group by supplier.sname;
++----------+----------+--------+
+| Quantity | Supplier | status |
++----------+----------+--------+
+|      900 | Smith    |     20 |
+|      600 | Clark    |     20 |
++----------+----------+--------+
+2 rows in set (0.00 sec)
 
 ————————————————————————————————————————————————————————————————————————————————
 
 Que 8.
 
-D3_80316_Anurag>select parts.pname "Part", `Supplier-Parts-Project`.qty "Quantity" from parts, `Supplier-Parts-Project` 
-    -> where parts.`p#` = `Supplier-Parts-Project`.`p#` and 
-    -> parts.weight> 14;
+D3_80316_Anurag>select parts.pname "Part", sum(`Supplier-Parts-Project`.qty) "Quantity" from parts, `Supplier-Parts-Project`
+    -> where parts.`p#` = `Supplier-Parts-Project`.`p#`
+    -> and parts.weight> 14
+    -> group by parts.pname;
 +-------+----------+
 | Part  | Quantity |
 +-------+----------+
-| Screw |      400 |
-| Screw |      200 |
-| Screw |      200 |
-| Screw |      500 |
-| Screw |      600 |
-| Screw |      400 |
-| Screw |      800 |
-| Screw |      200 |
-| Cog   |      300 |
-| Cog   |      300 |
-| Bolt  |      200 |
-| Bolt  |      100 |
-| Cog   |      200 |
-| Screw |      100 |
-| Cog   |      500 |
+| Screw |     3400 |
+| Cog   |     1300 |
+| Bolt  |      300 |
 +-------+----------+
+3 rows in set (0.00 sec)
 
 ————————————————————————————————————————————————————————————————————————————————
 
 Que 9.
 
-D3_80316_Anurag>select projects.jname "Project", projects.city "City" from projects, `Supplier-Parts-Project` where projects.`j#` = `Supplier-Parts-Project`.`#j` and  `Supplier-Parts-Project`.qty >500;
-+----------+--------+
-| Project  | City   |
-+----------+--------+
-| Console  | Athens |
-| Collator | London |
-| Tape     | London |
-| Console  | Athens |
-+----------+--------+
+D3_80316_Anurag>select projects.jname "Project name", projects.city "City", sum(`Supplier-Parts-Project`.qty) "Quantity" 
+    -> from projects, `Supplier-Parts-Project` 
+    -> where projects.`j#` = `Supplier-Parts-Project`.`#j` 
+    -> group by projects.jname, projects.city  
+    -> having sum(`Supplier-Parts-Project`.qty) > 500;
++--------------+--------+----------+
+| Project name | City   | Quantity |
++--------------+--------+----------+
+| Sorter       | Paris  |      800 |
+| Console      | Athens |     3100 |
+| Punch        | Rome   |     1400 |
+| Collator     | London |     1100 |
+| Tape         | London |     1200 |
++--------------+--------+----------+
+5 rows in set (0.00 sec)
 
 ————————————————————————————————————————————————————————————————————————————————
 
 Que 10.
 
-D3_80316_Anurag>select parts.pname "Part", `Supplier-Parts-Project`.qty "Quantity" from parts, `Supplier-Parts-Project` where parts.`p#` = `Supplier-Parts-Project`.`p#` and  parts.weight< 15;
+D3_80316_Anurag>select parts.pname "Part", sum(`Supplier-Parts-Project`.qty) "Quantity" from parts, `Supplier-Parts-Project`
+    -> where parts.`p#` = `Supplier-Parts-Project`.`p#`
+    -> and  parts.weight< 15
+    -> group by parts.pname;
 +-------+----------+
 | Part  | Quantity |
 +-------+----------+
-| Nut   |      200 |
-| Nut   |      700 |
-| Cam   |      100 |
-| Screw |      500 |
-| Cam   |      500 |
-| Cam   |      100 |
-| Nut   |      200 |
-| Screw |      800 |
-| Cam   |      400 |
+| Nut   |     1100 |
+| Cam   |     1100 |
+| Screw |     1300 |
 +-------+----------+
+3 rows in set (0.00 sec)
 
 ————————————————————————————————————————————————————————————————————————————————
 
