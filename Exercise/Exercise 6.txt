@@ -1,0 +1,118 @@
+
+————————————————————————————————————————————————————————————————————————————————
+Exercise 6:
+————————————————————————————————————————————————————————————————————————————————
+
+Que 1.
+
+D3_80316_Anurag>select supplier.sname "Supplier name" from supplier
+    -> where supplier.status =
+    -> (
+    -> select supplier.status from supplier
+    -> where supplier.sname = 'CLARK'
+    -> ) 
+    -> and supplier.sname != 'Clark';
++---------------+
+| Supplier name |
++---------------+
+| Smith         |
++---------------+
+1 row in set (0.00 sec)
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 2.
+
+
+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 3.
+
+D3_80316_Anurag>select parts.pname from parts
+    -> where parts.weight >
+    -> (
+    -> select sum(parts.weight) from parts
+    -> where parts.color = 'Red'
+    -> group by color
+    -> )
+    -> and parts.color != 'Red';
+Empty set (0.00 sec)
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 4.
+
+D3_80316_Anurag>select projects.jname "Project Name" from Projects 
+    -> where projects.city = 
+    -> (
+    -> select projects.city from projects 
+    -> where projects.jname = 'Tape'
+    -> ) 
+    -> and projects.jname != 'Tape';
++--------------+
+| Project Name |
++--------------+
+| Collator     |
++--------------+
+1 row in set (0.00 sec)
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 5.
+
+D3_80316_Anurag>select parts.pname "Part name" from parts
+    -> where parts.weight < 
+    -> (
+    -> select sum(parts.weight) from parts
+    -> where parts.color = 'green'
+    -> group by parts.color
+    -> )
+    -> and parts.color != 'green';
++-----------+
+| Part name |
++-----------+
+| Nut       |
+| Screw     |
+| Cam       |
++-----------+
+3 rows in set (0.00 sec)
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 6.
+
+D3_80316_Anurag>select supplier.sname "Supplier name", `Supplier-Parts-Project`.qty "Max quantity sold" from supplier, `Supplier-Parts-Project` 
+    -> where supplier.`S#` = `Supplier-Parts-Project`.`s#` 
+    -> and `Supplier-Parts-Project`.qty =  
+    -> ( 
+    -> select max(`Supplier-Parts-Project`.qty) from `Supplier-Parts-Project`
+    -> );
++---------------+-------------------+
+| Supplier name | Max quantity sold |
++---------------+-------------------+
+| Jones         |               800 |
+| Adams         |               800 |
++---------------+-------------------+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 7.
+
+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 8.
+
+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 9.
+
+
+
+————————————————————————————————————————————————————————————————————————————————
+
