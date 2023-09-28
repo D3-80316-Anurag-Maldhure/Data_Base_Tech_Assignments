@@ -1,0 +1,47 @@
+
+————————————————————————————————————————————————————————————————————————————————
+Assignment 11:
+————————————————————————————————————————————————————————————————————————————————
+
+Que 1.
+
+D3_80316_Anurag>select orders.onum "Order number", customers.cnum "Customer number" from orders, customers   
+    -> where orders.cnum = customers.cnum  
+    -> and  orders.cnum = 
+    -> ( 
+    -> select customers.cnum from customers 
+    -> where customers.cname = 'Cisneros' 
+    -> );
++--------------+-----------------+
+| Order number | Customer number |
++--------------+-----------------+
+|         3001 |            2008 |
+|         3006 |            2008 |
++--------------+-----------------+
+2 rows in set (0.01 sec)
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 2.
+
+D3_80316_Anurag>select customers.cname "Customer name", customers.rating "Rating", orders.amt "Amount" from customers, orders 
+    -> where customers.cnum = orders.cnum 
+    -> and orders.amt > 
+    -> ( 
+    -> select avg(orders.amt) from orders);
++---------------+--------+---------+
+| Customer name | Rating | Amount  |
++---------------+--------+---------+
+| Liu           |    200 | 5160.45 |
+| Clemens       |    100 | 9891.88 |
+| Clemens       |    100 | 4723.00 |
++---------------+--------+---------+
+3 rows in set (0.00 sec)
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 3.
+
+
+
+————————————————————————————————————————————————————————————————————————————————
