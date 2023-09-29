@@ -42,6 +42,12 @@ D3_80316_Anurag>select customers.cname "Customer name", customers.rating "Rating
 
 Que 3.
 
-
+D3_80316_Anurag>select salespeople.sname "Salesperson",  sum(orders.amt) from orders, salespeople where salespeople.snum = orders.snum group by salespeople.sname having sum(orders.amt) > (select max(orders.amt) from orders);
++-------------+-----------------+
+| Salesperson | sum(orders.amt) |
++-------------+-----------------+
+| Peel        |        15382.07 |
++-------------+-----------------+
+1 row in set (0.00 sec)
 
 ————————————————————————————————————————————————————————————————————————————————
