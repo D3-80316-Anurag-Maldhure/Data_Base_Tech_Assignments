@@ -23,8 +23,27 @@ D3_80316_Anurag>select supplier.sname "Supplier name" from supplier
 
 Que 2.
 
+D3_80316_Anurag>select emp.ename from emp, dept  where emp.deptno = dept.deptno and emp.deptno = (select emp.deptno from emp where emp.ename = 'MILLER');
++--------+
+| ename  |
++--------+
+| CLARK  |
+| KING   |
+| MILLER |
++--------+
+3 rows in set (0.00 sec)
 
+ALTERNATE:
 
+D3_80316_Anurag>select emp.ename, emp.deptno  from emp, dept  where emp.deptno = dept.deptno having emp.deptno = (select emp.deptno from emp where emp.ename = 'MILLER');
++--------+--------+
+| ename  | deptno |
++--------+--------+
+| CLARK  |     10 |
+| KING   |     10 |
+| MILLER |     10 |
++--------+--------+
+3 rows in set (0.00 sec)
 
 ————————————————————————————————————————————————————————————————————————————————
 
@@ -100,18 +119,40 @@ D3_80316_Anurag>select supplier.sname "Supplier name", `Supplier-Parts-Project`.
 
 Que 7.
 
-
+D3_80316_Anurag>select emp.ename "Employee with minimum salary", emp.sal "Salary" from emp where emp.sal = (select min(emp.sal) from emp);
++------------------------------+--------+
+| Employee with minimum salary | Salary |
++------------------------------+--------+
+| SMITH                        | 800.00 |
++------------------------------+--------+
+1 row in set (0.00 sec)
 
 ————————————————————————————————————————————————————————————————————————————————
 
 Que 8.
 
-
+D3_80316_Anurag>select supplier.sname "Supplier", sum(`Supplier-Parts-Project`.qty) "Maximum Overall Quantity" from `Supplier-Parts-Project`, supplier where `Supplier-Parts-Project`.`s#` = supplier.`s#` g
+roup by suppl
+`.`s#`) temp_sum);
++----------+--------------------------+
+| Supplier | Maximum Overall Quantity |
++----------+--------------------------+
+| Jones    |                     3200 |
++----------+--------------------------+
+1 row in set (0.00 sec)
 
 ————————————————————————————————————————————————————————————————————————————————
 
 Que 9.
 
+D3_80316_Anurag>select dept.dname "Department with maximum employees", dept.deptno "Department no", count(dept.deptno) "Employee count" from dept, emp where dept.deptno = emp.deptno group by dept.deptno,
+dept.dname having count(dept.deptno) = (select max(MaxEmp) from (select count(emp.deptno) "MaxEmp" from emp group by emp.deptno) temp_emp);
++-----------------------------------+---------------+----------------+
+| Department with maximum employees | Department no | Employee count |
++-----------------------------------+---------------+----------------+
+| SALES                             |            30 |              6 |
++-----------------------------------+---------------+----------------+
+1 row in set (0.00 sec)
 
 
 ————————————————————————————————————————————————————————————————————————————————
