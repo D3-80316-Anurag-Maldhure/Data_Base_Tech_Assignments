@@ -150,6 +150,60 @@ D3_80316_Anurag>select * from customers;
 
 Que 4.
 
+D3_80316_Anurag>update customers 
+    -> set Snum = null 
+    -> where Snum = 
+    -> (select Snum from salespeople 
+    -> where Sname = 'Serres');
 
+D3_80316_Anurag>select * from customers;
+
++------+----------+----------+--------+------+
+| Cnum | Cname    | City     | Rating | Snum |
++------+----------+----------+--------+------+
+| 2001 | Hoffman  | London   |    200 | 1001 |
+| 2002 | Giovanni | Rome     |    200 | 1003 |
+| 2003 | Liu      | San Jose |    200 | NULL |
+| 2004 | Grass    | Berlin   |    300 | NULL |
+| 2006 | Clemens  | London   |    200 | 1001 |
+| 2008 | Cisneros | San Jose |    300 | 1007 |
+| 2007 | Pereria  | Rome     |    200 | 1004 |
++------+----------+----------+--------+------+
+
+D3_80316_Anurag>update customers 
+    -> set Snum = 
+    -> (select Snum from salespeople 
+    -> where Sname = 'Motika') 
+    -> where Snum is NULL;
+
+D3_80316_Anurag>select * from customers;
+
++------+----------+----------+--------+------+
+| Cnum | Cname    | City     | Rating | Snum |
++------+----------+----------+--------+------+
+| 2001 | Hoffman  | London   |    200 | 1001 |
+| 2002 | Giovanni | Rome     |    200 | 1003 |
+| 2003 | Liu      | San Jose |    200 | 1004 |
+| 2004 | Grass    | Berlin   |    300 | 1004 |
+| 2006 | Clemens  | London   |    200 | 1001 |
+| 2008 | Cisneros | San Jose |    300 | 1007 |
+| 2007 | Pereria  | Rome     |    200 | 1004 |
++------+----------+----------+--------+------+
+
+D3_80316_Anurag>delete from salespeople 
+    -> where Sname = 'Serres';
+
+D3_80316_Anurag>select * from salespeople;
+
++------+---------+-----------+------+
+| Snum | Sname   | City      | Comm |
++------+---------+-----------+------+
+| 1001 | Peel    | London    | 0.12 |
+| 1004 | Motika  | London    | 0.11 |
+| 1007 | Rifkin  | Barcelona | 0.15 |
+| 1003 | Axelord | New York  | 0.10 |
+| 1005 | Sainath | Nanded    | 0.14 |
+| 1100 | Blanco  | San Jose  | NULL |
++------+---------+-----------+------+
 
 ————————————————————————————————————————————————————————————————————————————————

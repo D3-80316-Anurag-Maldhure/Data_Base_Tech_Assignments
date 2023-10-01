@@ -1,0 +1,77 @@
+
+————————————————————————————————————————————————————————————————————————————————
+Assignment 15:
+————————————————————————————————————————————————————————————————————————————————
+
+Que 1.
+
+
+D3_80316_Anurag>create table Multicust 
+    -> as 
+    -> select * from salespeople;
+
+D3_80316_Anurag>delete from Multicust;
+
+D3_80316_Anurag>select * from Multicust;
+Empty set
+
+D3_80316_Anurag>insert into Multicust 
+    -> Select * from salespeople 
+    -> where Snum = Any(
+    -> select Snum from orders 
+    -> group by Snum 
+    -> having count(Snum) > 1);
+
+D3_80316_Anurag>select * from Multicust;
+
++------+--------+-----------+------+
+| Snum | Sname  | City      | Comm |
++------+--------+-----------+------+
+| 1007 | Rifkin | Barcelona | 0.15 |
+| 1002 | Serres | San Jose  | 0.33 |
++------+--------+-----------+------+
+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 2.
+
+D3_80316_Anurag>delete from customers 
+    -> where Cnum = any(
+    -> select Cnum from orders);
+
+D3_80316_Anurag>select * from customers;
+
++------+---------+--------+--------+------+
+| Cnum | Cname   | City   | Rating | Snum |
++------+---------+--------+--------+------+
+| 2006 | Clemens | London |    200 | 1001 |
++------+---------+--------+--------+------+
+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 3.
+
+D3_80316_Anurag>update salespeople 
+    -> set Comm = Comm + 0.20 
+    -> where Snum = (
+    -> select Snum from orders 
+    -> group by Snum 
+    -> having sum(Amt) > 3000);
+
+D3_80316_Anurag>select * from salespeople;
+
++------+---------+-----------+------+
+| Snum | Sname   | City      | Comm |
++------+---------+-----------+------+
+| 1001 | Peel    | London    | 0.12 |
+| 1004 | Motika  | London    | 0.11 |
+| 1007 | Rifkin  | Barcelona | 0.15 |
+| 1003 | Axelord | New York  | 0.10 |
+| 1005 | Sainath | Nanded    | 0.14 |
+| 1100 | Blanco  | San Jose  | NULL |
+| 1002 | Serres  | San Jose  | 0.33 |
++------+---------+-----------+------+
+
+————————————————————————————————————————————————————————————————————————————————
