@@ -1,0 +1,251 @@
+————————————————————————————————————————————————————————————————————————————————
+PL Exercise 2:
+————————————————————————————————————————————————————————————————————————————————
+
+Que 1.
+
+D3_80316_Anurag>create table sample_int(Number int);
+Query OK, 0 rows affected (0.01 sec)
+
+D3_80316_Anurag>desc sample_int;
++--------+------+------+-----+---------+-------+
+| Field  | Type | Null | Key | Default | Extra |
++--------+------+------+-----+---------+-------+
+| Number | int  | YES  |     | NULL    |       |
++--------+------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+D3_80316_Anurag>insert into sample_int values(12),(1),(55),(7),(78),(4),(8),(788);
+Query OK, 8 rows affected (0.00 sec)
+Records: 8  Duplicates: 0  Warnings: 0
+
+D3_80316_Anurag>select * from sample_int;
++--------+
+| Number |
++--------+
+|     12 |
+|      1 |
+|     55 |
+|      7 |
+|     78 |
+|      4 |
+|      8 |
+|    788 |
++--------+
+8 rows in set (0.00 sec)
+
+D3_80316_Anurag>create table stat(x int, In_The_Range varchar(30));
+Query OK, 0 rows affected (0.01 sec)
+
+D3_80316_Anurag>desc stat;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| x            | int         | YES  |     | NULL    |       |
+| In_The_Range | varchar(30) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+D3_80316_Anurag>delimiter //
+D3_80316_Anurag>create procedure Range_ka_sandesh()
+    -> begin
+    -> declare i int;
+    -> declare y int default 0;
+    -> declare c1 cursor for select * from sample_int;
+    -> declare continue handler for not found set y =1;
+    -> open c1;
+    -> c_c1_loop : loop
+    -> fetch c1 into i;
+    -> if y = 1 then
+    -> leave c_c1_loop;
+    -> end if;
+    -> if i >= 1 then
+    -> if i <=10 then
+    -> insert into stat values(i, 'Between 1 and 10');
+    -> else
+    -> insert into stat values(i, 'Greater than 10');
+    -> end if;
+    -> else
+    -> insert into stat values(i, 'Not in range 1 and 10');
+    -> end if;
+    -> end loop c_c1_loop;
+    -> close c1;
+    -> end; //
+Query OK, 0 rows affected (0.01 sec)
+
+D3_80316_Anurag>delimiter ;
+
+D3_80316_Anurag>call Range_ka_sandesh();
+Query OK, 0 rows affected (0.01 sec)
+
+D3_80316_Anurag>select * from stat;
++------+------------------+
+| x    | In_The_Range     |
++------+------------------+
+|   12 | Greater than 10  |
+|    1 | Between 1 and 10 |
+|   55 | Greater than 10  |
+|    7 | Between 1 and 10 |
+|   78 | Greater than 10  |
+|    4 | Between 1 and 10 |
+|    8 | Between 1 and 10 |
+|  788 | Greater than 10  |
++------+------------------+
+8 rows in set (0.00 sec)
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 2.
+
+D3_80316_Anurag>create table Triangle_set (Side_1 float, Side_2 float, Side_3 float);
+Query OK, 0 rows affected (0.01 sec)
+
+D3_80316_Anurag>desc Triangle_set;
++--------+-------+------+-----+---------+-------+
+| Field  | Type  | Null | Key | Default | Extra |
++--------+-------+------+-----+---------+-------+
+| Side_1 | float | YES  |     | NULL    |       |
+| Side_2 | float | YES  |     | NULL    |       |
+| Side_3 | float | YES  |     | NULL    |       |
++--------+-------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+D3_80316_Anurag>insert into Triangle_set values(12,23,14),(1,4,8),(45,32,4),(23,11,24),(723,325,547),(123,456,789);
+Query OK, 6 rows affected (0.00 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+D3_80316_Anurag>select * from Triangle_set;
++--------+--------+--------+
+| Side_1 | Side_2 | Side_3 |
++--------+--------+--------+
+|     12 |     23 |     14 |
+|      1 |      4 |      8 |
+|     45 |     32 |      4 |
+|     23 |     11 |     24 |
+|    723 |    325 |    547 |
+|    123 |    456 |    789 |
++--------+--------+--------+
+6 rows in set (0.00 sec)
+
+D3_80316_Anurag>create table Triangle_Validation(Side_1 float, Side_2 float, Side_3 float, Validation_of_Triangle varchar(15));
+Query OK, 0 rows affected (0.01 sec)
+
+D3_80316_Anurag>desc Triangle_Validation;
++------------------------+-------------+------+-----+---------+-------+
+| Field                  | Type        | Null | Key | Default | Extra |
++------------------------+-------------+------+-----+---------+-------+
+| Side_1                 | float       | YES  |     | NULL    |       |
+| Side_2                 | float       | YES  |     | NULL    |       |
+| Side_3                 | float       | YES  |     | NULL    |       |
+| Validation_of_Triangle | varchar(15) | YES  |     | NULL    |       |
++------------------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+D3_80316_Anurag>call Triangle_valid();
+Query OK, 0 rows affected (0.01 sec)
+
+D3_80316_Anurag>select * from Triangle_Validation;
++--------+--------+--------+------------------------+
+| Side_1 | Side_2 | Side_3 | Validation_of_Triangle |
++--------+--------+--------+------------------------+
+|     12 |     23 |     14 | Valid Triangle         |
+|      1 |      4 |      8 | Invalid                |
+|     45 |     32 |      4 | Invalid                |
+|     23 |     11 |     24 | Valid Triangle         |
+|    723 |    325 |    547 | Valid Triangle         |
+|    123 |    456 |    789 | Invalid                |
++--------+--------+--------+------------------------+
+6 rows in set (0.00 sec)
+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 3.
+
+D3_80316_Anurag>create table Year_set( Year int);
+Query OK, 0 rows affected (0.00 sec)
+
+D3_80316_Anurag>desc Year_set;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| Year  | int  | YES  |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+D3_80316_Anurag>insert into Year_set values(1222),(1999),(2004),(2400),(2100),(456),(4040),(788);
+Query OK, 8 rows affected (0.00 sec)
+Records: 8  Duplicates: 0  Warnings: 0
+
+D3_80316_Anurag>select * from Year_set;
++------+
+| Year |
++------+
+| 1222 |
+| 1999 |
+| 2004 |
+| 2400 |
+| 2100 |
+|  456 |
+| 4040 |
+|  788 |
++------+
+8 rows in set (0.00 sec)
+
+D3_80316_Anurag>create table Year_Is_Leap (year int, Leap_Year_Or_Not varchar(10));
+Query OK, 0 rows affected (0.01 sec)
+
+D3_80316_Anurag>create procedure Leap_year()
+    -> begin
+    -> declare year int;
+    -> declare y int default 0;
+    -> declare c1 cursor for select * from Year_set;
+    -> declare continue handler for not found set y =1;
+    -> open c1;
+    -> c_c1_loop : loop
+    -> fetch c1 into year;
+    -> if y = 1 then
+    -> leave c_c1_loop;
+    -> end if;
+    -> if year % 4 then
+    -> if year % 400 then
+    -> insert into Year_Is_Leap values (year, 'Leap Year');
+    -> else
+    -> insert into Year_Is_Leap values (year, 'NA');
+    -> end if;
+    -> else 
+    -> insert into Year_Is_Leap values (year, 'NA');
+    -> end if;
+    -> end loop c_c1_loop;
+    -> end; //
+Query OK, 0 rows affected (0.00 sec)
+
+D3_80316_Anurag>delimiter ;
+
+D3_80316_Anurag>call Leap_year();
+Query OK, 0 rows affected (0.01 sec)
+
+D3_80316_Anurag>select * from Year_Is_Leap;
++------+------------------+
+| year | Leap_Year_Or_Not |
++------+------------------+
+| 1222 | Leap Year        |
+| 1999 | Leap Year        |
+| 2004 | NA               |
+| 2400 | NA               |
+| 2100 | NA               |
+|  456 | NA               |
+| 4040 | NA               |
+|  788 | NA               |
++------+------------------+
+8 rows in set (0.00 sec)
+
+————————————————————————————————————————————————————————————————————————————————
+
+
+
+
+
+
+
+
