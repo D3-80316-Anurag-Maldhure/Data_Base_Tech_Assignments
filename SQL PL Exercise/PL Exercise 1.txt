@@ -1,0 +1,136 @@
+————————————————————————————————————————————————————————————————————————————————
+PL Exercise 1:
+————————————————————————————————————————————————————————————————————————————————
+
+Que 1.
+
+D3_80316_Anurag>create table tempp (Perimeter float , Area float);
+Query OK, 0 rows affected (0.01 sec)
+
+D3_80316_Anurag>select * from tempp;
+Empty set (0.01 sec)
+
+D3_80316_Anurag>create procedure Rectangle_calc(l float, b float) 
+    -> begin 
+    -> declare perimeter float; 
+    -> declare area float; 
+    -> set area = l*b; 
+    -> set perimeter = 2*(l+b); 
+    -> insert into tempp values (area, perimeter); 
+    -> end;//
+Query OK, 0 rows affected (0.00 sec)
+
+D3_80316_Anurag>delimiter ;
+
+D3_80316_Anurag>call Rectangle_calc(10,10);
+Query OK, 1 row affected (0.00 sec)
+
+D3_80316_Anurag>call Rectangle_calc(40.25, 50.21);
+Query OK, 1 row affected (0.01 sec)
+
+D3_80316_Anurag>select * from tempp;
++-----------+--------+
+| Perimeter | Area   |
++-----------+--------+
+|       100 |     40 |
+|   2020.95 | 180.92 |
++-----------+--------+
+2 rows in set (0.00 sec)
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 2.
+
+D3_80316_Anurag>create table converted_temperature (Input_temperature float, Converted_temperature float, Conversion_type varchar(30));
+Query OK, 0 rows affected (0.01 sec)
+
+D3_80316_Anurag>desc converted_temperature;
++-----------------------+-------------+------+-----+---------+-------+
+| Field                 | Type        | Null | Key | Default | Extra |
++-----------------------+-------------+------+-----+---------+-------+
+| Input_temperature     | float       | YES  |     | NULL    |       |
+| Converted_temperature | float       | YES  |     | NULL    |       |
+| Conversion_type       | varchar(30) | YES  |     | NULL    |       |
++-----------------------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+
+D3_80316_Anurag>delimiter //
+D3_80316_Anurag>create procedure cel_to_far(celcius float) begin declare fah float; set fah = ((9/5)*celcius)+32; insert into converted_temperature values (celcius, fah, 'Celcius to Fahrenheit'); end;//
+Query OK, 0 rows affected (0.00 sec)
+
+D3_80316_Anurag>create procedure fah_to_cel(fahrenheit float) begin declare cel float; set cel = (fahrenheit-32)*(5/9); insert into converted_temperature values (fahrenheit, cel, 'Fahrenheit to Celcius'); end;//
+Query OK, 0 rows affected (0.00 sec)
+
+D3_80316_Anurag>delimiter ;
+
+D3_80316_Anurag>call cel_to_far(37.5);
+Query OK, 1 row affected (0.00 sec)
+
+D3_80316_Anurag>call fah_to_cel(98.7);
+Query OK, 1 row affected (0.00 sec)
+
+D3_80316_Anurag>select * from converted_temperature;
++-------------------+-----------------------+-----------------------+
+| Input_temperature | Converted_temperature | Conversion_type       |
++-------------------+-----------------------+-----------------------+
+|              37.5 |                  99.5 | Celcius to Fahrenheit |
+|              98.7 |               37.0556 | Fahrenheit to Celcius |
++-------------------+-----------------------+-----------------------+
+2 rows in set (0.00 sec)
+
+
+————————————————————————————————————————————————————————————————————————————————
+
+Que 3.
+
+D3_80316_Anurag>create table temp(Input_integer int, Divisibility_by_5 varchar(30));
+Query OK, 0 rows affected (0.01 sec)
+
+D3_80316_Anurag>desc temp;
++-------------------+-------------+------+-----+---------+-------+
+| Field             | Type        | Null | Key | Default | Extra |
++-------------------+-------------+------+-----+---------+-------+
+| Input_integer     | int         | YES  |     | NULL    |       |
+| Divisibility_by_5 | varchar(15) | YES  |     | NULL    |       |
++-------------------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+D3_80316_Anurag>delimiter //
+D3_80316_Anurag>create procedure div_5(x int)
+    -> begin
+    -> if x%5 = 0 then
+    -> insert into temp values(x, 'Evenly divisible by 5');
+    -> else
+    -> insert into temp values(x, 'Not evenly divisible by 5');
+    -> end if;
+    -> end; //
+Query OK, 0 rows affected (0.00 sec)
+
+D3_80316_Anurag>delimiter ;
+
+D3_80316_Anurag>call div_5(225);
+Query OK, 1 row affected (0.01 sec)
+
+D3_80316_Anurag>call div_5(1224);
+Query OK, 1 row affected (0.00 sec)
+
+D3_80316_Anurag>select * from temp;
++---------------+---------------------------+
+| Input_integer | Divisibility_by_5         |
++---------------+---------------------------+
+|           225 | Evenly divisible by 5     |
+|          1224 | Not evenly divisible by 5 |
++---------------+---------------------------+
+2 rows in set (0.00 sec)
+
+
+————————————————————————————————————————————————————————————————————————————————
+
+
+
+
+
+
+
+
